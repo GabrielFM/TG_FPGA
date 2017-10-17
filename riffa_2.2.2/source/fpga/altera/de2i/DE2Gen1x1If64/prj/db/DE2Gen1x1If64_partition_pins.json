@@ -1,0 +1,569 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "o_channel_rx_clk",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_rx_ack",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_rx_data_ren",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_clk",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_last",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[15]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[16]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[17]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[18]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[19]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[20]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[21]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[22]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[23]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[24]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[25]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[26]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[27]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[28]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[29]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[30]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[31]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[32]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[33]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[34]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[35]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[36]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[37]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[38]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[39]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[40]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[41]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[42]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[43]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[44]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[45]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[46]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[47]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[48]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[49]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[50]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[51]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[52]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[53]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[54]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[55]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[56]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[57]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[58]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[59]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[60]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[61]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[62]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data[63]",
+					"strict" : false
+				},
+				{
+					"name" : "o_channel_tx_data_valid",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx",
+					"strict" : false
+				},
+				{
+					"name" : "i_reset",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_tx_data_ren",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data_valid",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[15]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[16]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[23]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[22]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[21]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[20]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[19]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[18]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[17]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[24]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[31]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[30]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[29]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[28]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[27]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[26]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[25]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[32]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[39]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[38]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[37]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[36]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[35]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[34]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[33]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[40]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[47]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[46]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[45]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[44]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[43]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[42]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[41]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[48]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[55]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[54]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[53]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[52]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[51]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[50]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[49]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[56]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[63]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[62]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[61]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[60]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[59]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[58]",
+					"strict" : false
+				},
+				{
+					"name" : "i_channel_rx_data[57]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

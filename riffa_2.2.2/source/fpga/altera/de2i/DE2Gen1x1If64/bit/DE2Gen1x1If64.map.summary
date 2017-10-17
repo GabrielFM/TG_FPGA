@@ -1,0 +1,18 @@
+Analysis & Synthesis Status : Successful - Tue Oct 17 14:03:21 2017
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+Revision Name : DE2Gen1x1If64
+Top-level Entity Name : control_unit_platedetection
+Family : Cyclone IV GX
+Total logic elements : 11,752
+    Total combinational functions : 11,344
+    Dedicated logic registers : 11,232
+Total registers : 11232
+Total pins : 268
+Total virtual pins : 0
+Total memory bits : 4,194,304
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 0

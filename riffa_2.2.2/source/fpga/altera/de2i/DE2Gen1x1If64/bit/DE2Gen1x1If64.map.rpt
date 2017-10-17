@@ -1,0 +1,1191 @@
+Analysis & Synthesis report for DE2Gen1x1If64
+Tue Oct 17 14:03:21 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|altsyncram_rrh1:FIFOram
+ 14. Parameter Settings for User Entity Instance: fifo_pixel:fifo_pixel_i|scfifo:scfifo_component
+ 15. scfifo Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "fifo_pixel:fifo_pixel_i"
+ 17. Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i"
+ 18. Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i"
+ 19. Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i"
+ 20. Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i"
+ 21. Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i"
+ 22. Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i"
+ 23. Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Oct 17 14:03:21 2017           ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
+; Revision Name                      ; DE2Gen1x1If64                                   ;
+; Top-level Entity Name              ; control_unit_platedetection                     ;
+; Family                             ; Cyclone IV GX                                   ;
+; Total logic elements               ; 11,752                                          ;
+;     Total combinational functions  ; 11,344                                          ;
+;     Dedicated logic registers      ; 11,232                                          ;
+; Total registers                    ; 11232                                           ;
+; Total pins                         ; 268                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 4,194,304                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total GXB Receiver Channel PCS     ; 0                                               ;
+; Total GXB Receiver Channel PMA     ; 0                                               ;
+; Total GXB Transmitter Channel PCS  ; 0                                               ;
+; Total GXB Transmitter Channel PMA  ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                 ;
++----------------------------------------------------------------------------+-----------------------------+--------------------+
+; Option                                                                     ; Setting                     ; Default Value      ;
++----------------------------------------------------------------------------+-----------------------------+--------------------+
+; Device                                                                     ; EP4CGX150DF31C7             ;                    ;
+; Top-level entity name                                                      ; control_unit_platedetection ; DE2Gen1x1If64      ;
+; Family name                                                                ; Cyclone IV GX               ; Cyclone V          ;
+; Verilog Show LMF Mapping Messages                                          ; Off                         ;                    ;
+; Verilog Version                                                            ; SystemVerilog_2005          ; Verilog_2001       ;
+; Use smart compilation                                                      ; Off                         ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                          ; On                 ;
+; Enable compact report table                                                ; Off                         ; Off                ;
+; Restructure Multiplexers                                                   ; Auto                        ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                         ; Off                ;
+; Preserve fewer node names                                                  ; On                          ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable                      ; Enable             ;
+; VHDL Version                                                               ; VHDL_1993                   ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto                        ; Auto               ;
+; Safe State Machine                                                         ; Off                         ; Off                ;
+; Extract Verilog State Machines                                             ; On                          ; On                 ;
+; Extract VHDL State Machines                                                ; On                          ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                         ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000                        ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                         ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                          ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                          ; On                 ;
+; Parallel Synthesis                                                         ; On                          ; On                 ;
+; DSP Block Balancing                                                        ; Auto                        ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                          ; On                 ;
+; Power-Up Don't Care                                                        ; On                          ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                         ; Off                ;
+; Remove Duplicate Registers                                                 ; On                          ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                         ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                         ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                         ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                         ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                         ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                          ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                         ; Off                ;
+; Optimization Technique                                                     ; Balanced                    ; Balanced           ;
+; Carry Chain Length                                                         ; 70                          ; 70                 ;
+; Auto Carry Chains                                                          ; On                          ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                          ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                         ; Off                ;
+; Auto ROM Replacement                                                       ; On                          ; On                 ;
+; Auto RAM Replacement                                                       ; On                          ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                          ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto                        ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                        ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                          ; On                 ;
+; Strict RAM Replacement                                                     ; Off                         ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                          ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                         ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                          ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                         ; Off                ;
+; Auto Resource Sharing                                                      ; Off                         ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                         ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                         ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                         ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                          ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                         ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                          ; On                 ;
+; Report Parameter Settings                                                  ; On                          ; On                 ;
+; Report Source Assignments                                                  ; On                          ; On                 ;
+; Report Connectivity Checks                                                 ; On                          ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                         ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                           ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation          ; Normal compilation ;
+; HDL message level                                                          ; Level2                      ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                         ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                        ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                        ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                         ; 100                ;
+; Clock MUX Protection                                                       ; On                          ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                         ; Off                ;
+; Block Design Naming                                                        ; Auto                        ; Auto               ;
+; SDC constraint protection                                                  ; Off                         ; Off                ;
+; Synthesis Effort                                                           ; Auto                        ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                          ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                         ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium                      ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto                        ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                          ; On                 ;
++----------------------------------------------------------------------------+-----------------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.3%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                            ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; dilate_platedetection.sv         ; yes             ; User SystemVerilog HDL File  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv        ;         ;
+; dilate_kernel_platedetection.sv  ; yes             ; User SystemVerilog HDL File  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_kernel_platedetection.sv ;         ;
+; control_unit_platedetection.sv   ; yes             ; User SystemVerilog HDL File  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv  ;         ;
+; fifo_pixel.v                     ; yes             ; User Verilog HDL File        ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/fifo_pixel.v                    ;         ;
+; defines_platedetection.svh       ; yes             ; Auto-Found Unspecified File  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/defines_platedetection.svh      ;         ;
+; scfifo.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga/17.0/quartus/libraries/megafunctions/scfifo.tdf                                            ;         ;
+; a_regfifo.inc                    ; yes             ; Megafunction                 ; c:/intelfpga/17.0/quartus/libraries/megafunctions/a_regfifo.inc                                         ;         ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/17.0/quartus/libraries/megafunctions/a_dpfifo.inc                                          ;         ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/17.0/quartus/libraries/megafunctions/a_i2fifo.inc                                          ;         ;
+; a_fffifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/17.0/quartus/libraries/megafunctions/a_fffifo.inc                                          ;         ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/17.0/quartus/libraries/megafunctions/a_f2fifo.inc                                          ;         ;
+; aglobal170.inc                   ; yes             ; Megafunction                 ; c:/intelfpga/17.0/quartus/libraries/megafunctions/aglobal170.inc                                        ;         ;
+; db/scfifo_d1a1.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/scfifo_d1a1.tdf              ;         ;
+; db/a_dpfifo_d331.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/a_dpfifo_d331.tdf            ;         ;
+; db/altsyncram_rrh1.tdf           ; yes             ; Auto-Generated Megafunction  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/altsyncram_rrh1.tdf          ;         ;
+; db/decode_cc7.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/decode_cc7.tdf               ;         ;
+; db/mux_e88.tdf                   ; yes             ; Auto-Generated Megafunction  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/mux_e88.tdf                  ;         ;
+; db/cmpr_u19.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/cmpr_u19.tdf                 ;         ;
+; db/cntr_9fb.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/cntr_9fb.tdf                 ;         ;
+; db/cntr_mf7.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/cntr_mf7.tdf                 ;         ;
+; db/cntr_afb.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/cntr_afb.tdf                 ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 268              ;
+; Total memory bits        ; 4194304          ;
+;                          ;                  ;
+; DSP block 9-bit elements ; 0                ;
+;                          ;                  ;
+; Maximum fan-out node     ; clk~input        ;
+; Maximum fan-out          ; 11746            ;
+; Total fan-out            ; 104757           ;
+; Average fan-out          ; 4.43             ;
++--------------------------+------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                      ;
++---------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+; Compilation Hierarchy Node                                                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                     ; Entity Name                  ; Library Name ;
++---------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+; |control_unit_platedetection                                              ; 11344 (16)          ; 11232 (6)                 ; 4194304     ; 0            ; 0       ; 0         ; 0         ; 268  ; 0            ; |control_unit_platedetection                                                                                                                                            ; control_unit_platedetection  ; work         ;
+;    |dilate_platedetection:dilate_platedetection_i|                        ; 10881 (10593)       ; 11147 (10486)             ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i                                                                                              ; dilate_platedetection        ; work         ;
+;       |dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i| ; 36 (36)             ; 97 (97)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i                            ; dilate_kernel_platedetection ; work         ;
+;       |dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i| ; 36 (36)             ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i                            ; dilate_kernel_platedetection ; work         ;
+;       |dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i| ; 36 (36)             ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i                            ; dilate_kernel_platedetection ; work         ;
+;       |dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i| ; 36 (36)             ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i                            ; dilate_kernel_platedetection ; work         ;
+;       |dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i| ; 36 (36)             ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i                            ; dilate_kernel_platedetection ; work         ;
+;       |dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i| ; 36 (36)             ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i                            ; dilate_kernel_platedetection ; work         ;
+;       |dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i| ; 36 (36)             ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i                            ; dilate_kernel_platedetection ; work         ;
+;       |dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i| ; 36 (36)             ; 84 (84)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i                            ; dilate_kernel_platedetection ; work         ;
+;    |fifo_pixel:fifo_pixel_i|                                              ; 447 (0)             ; 79 (0)                    ; 4194304     ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|fifo_pixel:fifo_pixel_i                                                                                                                    ; fifo_pixel                   ; work         ;
+;       |scfifo:scfifo_component|                                           ; 447 (0)             ; 79 (0)                    ; 4194304     ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|fifo_pixel:fifo_pixel_i|scfifo:scfifo_component                                                                                            ; scfifo                       ; work         ;
+;          |scfifo_d1a1:auto_generated|                                     ; 447 (11)            ; 79 (2)                    ; 4194304     ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated                                                                 ; scfifo_d1a1                  ; work         ;
+;             |a_dpfifo_d331:dpfifo|                                        ; 436 (59)            ; 77 (24)                   ; 4194304     ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo                                            ; a_dpfifo_d331                ; work         ;
+;                |altsyncram_rrh1:FIFOram|                                  ; 328 (0)             ; 6 (6)                     ; 4194304     ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|altsyncram_rrh1:FIFOram                    ; altsyncram_rrh1              ; work         ;
+;                   |decode_cc7:decode2|                                    ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|altsyncram_rrh1:FIFOram|decode_cc7:decode2 ; decode_cc7                   ; work         ;
+;                   |mux_e88:mux3|                                          ; 320 (320)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|altsyncram_rrh1:FIFOram|mux_e88:mux3       ; mux_e88                      ; work         ;
+;                |cntr_9fb:rd_ptr_msb|                                      ; 16 (16)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|cntr_9fb:rd_ptr_msb                        ; cntr_9fb                     ; work         ;
+;                |cntr_afb:wr_ptr|                                          ; 17 (17)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|cntr_afb:wr_ptr                            ; cntr_afb                     ; work         ;
+;                |cntr_mf7:usedw_counter|                                   ; 16 (16)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |control_unit_platedetection|fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|cntr_mf7:usedw_counter                     ; cntr_mf7                     ; work         ;
++---------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------+
+; Name                                                                                                                               ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF  ;
++------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------+
+; fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|altsyncram_rrh1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 65536        ; 64           ; 65536        ; 64           ; 4194304 ; None ;
++------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                                ;
++-----------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                     ; Reason for Removal                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; dilate_platedetection:dilate_platedetection_i|r_contador_data_pixels[0..3]                                                        ; Stuck at GND due to stuck port data_in                                                                                                        ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_start_kernel_1  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_1  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_start_kernel_1  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_1  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_start_kernel_1  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_1  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_start_kernel_1  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_1  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_start_kernel_1  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_1  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_start_kernel_1  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_1  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_start_kernel_1  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_1  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_start_kernel_2  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_2  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_start_kernel_2  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_2  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_start_kernel_2  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_2  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_start_kernel_2  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_2  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_start_kernel_2  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_2  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_start_kernel_2  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_2  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_start_kernel_2  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_2  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_start_kernel_3  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_3  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_start_kernel_3  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_3  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_start_kernel_3  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_3  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_start_kernel_3  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_3  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_start_kernel_3  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_3  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_start_kernel_3  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_3  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_start_kernel_3  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_3  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_start_kernel_4  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_4  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_start_kernel_4  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_4  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_start_kernel_4  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_4  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_start_kernel_4  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_4  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_start_kernel_4  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_4  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_start_kernel_4  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_4  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_start_kernel_4  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_start_kernel_4  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_right[0]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_center[0] ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[8]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[0]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[0]                                                                     ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[8]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[16]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[8]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[7]                                                                     ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[15]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[23]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[15]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[6]                                                                     ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[14]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[22]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[14]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[5]                                                                     ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[13]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[21]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[13]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[4]                                                                     ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[12]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[20]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[12]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[3]                                                                     ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[11]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[19]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[11]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[2]                                                                     ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[10]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[18]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[10]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[1]                                                                     ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[9]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[17]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[9]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[15]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[7]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[14]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[6]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[13]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[5]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[12]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[4]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[11]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[3]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[10]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[2]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[9]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[1]                                                                   ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[8]                                                                     ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[16]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[24]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[16]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[15]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[23]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[31]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[23]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[14]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[22]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[30]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[22]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[13]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[21]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[29]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[21]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[12]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[20]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[28]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[20]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[11]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[19]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[27]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[19]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[10]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[18]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[26]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[18]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[9]                                                                     ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[17]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[25]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[17]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[16]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[24]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[32]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[24]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[23]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[31]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[39]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[31]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[22]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[30]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[38]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[30]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[21]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[29]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[37]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[29]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[20]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[28]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[36]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[28]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[19]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[27]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[35]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[27]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[18]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[26]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[34]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[26]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[17]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[25]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[33]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[25]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[24]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[32]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[40]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[32]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[31]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[39]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[47]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[39]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[30]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[38]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[46]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[38]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[29]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[37]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[45]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[37]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[28]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[36]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[44]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[36]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[27]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[35]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[43]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[35]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[26]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[34]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[42]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[34]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[25]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[33]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[41]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[33]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[32]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[40]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[48]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[40]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[39]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[47]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[55]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[47]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[38]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[46]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[54]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[46]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[37]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[45]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[53]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[45]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[36]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[44]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[52]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[44]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[35]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[43]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[51]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[43]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[34]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[42]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[50]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[42]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[33]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[41]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[49]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[41]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[40]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[48]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[56]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[48]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[47]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[55]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[63]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[55]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[46]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[54]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[62]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[54]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[45]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[53]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[61]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[53]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[44]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[52]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[60]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[52]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[43]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[51]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[59]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[51]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[42]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[50]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[58]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[50]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[41]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[49]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_right[57]                                                                   ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[49]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[48]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[56]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[55]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[63]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[54]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[62]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[53]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[61]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[52]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[60]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[51]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[59]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[50]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[58]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|r_pixel_left[49]                                                                    ; Merged with dilate_platedetection:dilate_platedetection_i|r_pixel_center[57]                                                                  ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_center[0] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_right[0]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_center[7] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_right[7]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_center[6] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_right[6]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_center[5] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_right[5]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_center[4] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_right[4]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_center[3] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_right[3]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_center[2] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_right[2]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_center[1] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_right[1]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_right[7]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_center[7] ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_right[6]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_center[6] ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_right[5]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_center[5] ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_right[4]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_center[4] ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_right[3]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_center[3] ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_right[2]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_center[2] ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_right[1]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i|r_pixel_center[1] ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_center[0] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_right[0]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_center[7] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_right[7]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_center[6] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_right[6]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_center[5] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_right[5]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_center[4] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_right[4]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_center[3] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_right[3]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_center[2] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_right[2]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_center[1] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_right[1]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_center[0] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_right[0]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_center[7] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_right[7]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_center[6] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_right[6]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_center[5] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_right[5]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_center[4] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_right[4]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_center[3] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_right[3]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_center[2] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_right[2]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_center[1] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_right[1]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_center[0] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_right[0]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_center[7] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_right[7]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_center[6] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_right[6]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_center[5] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_right[5]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_center[4] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_right[4]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_center[3] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_right[3]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_center[2] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_right[2]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_center[1] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_right[1]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_center[0] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_right[0]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_center[7] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_right[7]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_center[6] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_right[6]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_center[5] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_right[5]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_center[4] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_right[4]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_center[3] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_right[3]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_center[2] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_right[2]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_center[1] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_right[1]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_center[0] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_right[0]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_center[7] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_right[7]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_center[6] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_right[6]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_center[5] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_right[5]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_center[4] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_right[4]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_center[3] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_right[3]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_center[2] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_right[2]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_center[1] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_right[1]  ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_center[0] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_left[0]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_center[7] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_left[7]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_center[6] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_left[6]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_center[5] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_left[5]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_center[4] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_left[4]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_center[3] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_left[3]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_center[2] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_left[2]   ;
+; dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i|r_pixel_center[1] ; Merged with dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i|r_pixel_left[1]   ;
+; Total Number of Removed Registers = 256                                                                                           ;                                                                                                                                               ;
++-----------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 11232 ;
+; Number of registers using Synchronous Clear  ; 3     ;
+; Number of registers using Synchronous Load   ; 303   ;
+; Number of registers using Asynchronous Clear ; 10492 ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 11044 ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                      ;
++-------------------------------------------------------------------------+---------+
+; Inverted Register                                                       ; Fan out ;
++-------------------------------------------------------------------------+---------+
+; r_state_UC_comunication[0]                                              ; 6       ;
+; r_fifo_pixels_clear                                                     ; 77      ;
+; dilate_platedetection:dilate_platedetection_i|r_state_UC_dilate[0]      ; 48      ;
+; dilate_platedetection:dilate_platedetection_i|r_contador_data_pixels[4] ; 2       ;
+; dilate_platedetection:dilate_platedetection_i|r_contador_data_pixels[6] ; 2       ;
+; Total number of inverted registers = 5                                  ;         ;
++-------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                            ;
++--------------------+------------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width  ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                 ;
++--------------------+------------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 15 bits    ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|r_contador_data_pixels_line[15] ;
+; 4:1                ; 128 bits   ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|r_pixel_center[28]              ;
+; 6:1                ; 8 bits     ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|r_pixel_right[0]                ;
+; 6:1                ; 8 bits     ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|r_pixel_left[59]                ;
+; 4:1                ; 10176 bits ; 20352 LEs     ; 10176 LEs            ; 10176 LEs              ; Yes        ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|r_data_L1[500]                  ;
+; 4:1                ; 2 bits     ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |control_unit_platedetection|dilate_platedetection:dilate_platedetection_i|r_contador_data_pixels[4]       ;
++--------------------+------------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|altsyncram_rrh1:FIFOram ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                               ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fifo_pixel:fifo_pixel_i|scfifo:scfifo_component ;
++-------------------------+---------------+----------------------------------------------------+
+; Parameter Name          ; Value         ; Type                                               ;
++-------------------------+---------------+----------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON            ; AUTO_CARRY                                         ;
+; IGNORE_CARRY_BUFFERS    ; OFF           ; IGNORE_CARRY                                       ;
+; AUTO_CASCADE_CHAINS     ; ON            ; AUTO_CASCADE                                       ;
+; IGNORE_CASCADE_BUFFERS  ; OFF           ; IGNORE_CASCADE                                     ;
+; lpm_width               ; 64            ; Signed Integer                                     ;
+; LPM_NUMWORDS            ; 38400         ; Signed Integer                                     ;
+; LPM_WIDTHU              ; 16            ; Signed Integer                                     ;
+; LPM_SHOWAHEAD           ; ON            ; Untyped                                            ;
+; UNDERFLOW_CHECKING      ; ON            ; Untyped                                            ;
+; OVERFLOW_CHECKING       ; ON            ; Untyped                                            ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF           ; Untyped                                            ;
+; ADD_RAM_OUTPUT_REGISTER ; ON            ; Untyped                                            ;
+; ALMOST_FULL_VALUE       ; 38399         ; Signed Integer                                     ;
+; ALMOST_EMPTY_VALUE      ; 1             ; Signed Integer                                     ;
+; ENABLE_ECC              ; FALSE         ; Untyped                                            ;
+; USE_EAB                 ; ON            ; Untyped                                            ;
+; MAXIMIZE_SPEED          ; 5             ; Untyped                                            ;
+; DEVICE_FAMILY           ; Cyclone IV GX ; Untyped                                            ;
+; OPTIMIZE_FOR_SPEED      ; 5             ; Untyped                                            ;
+; CBXI_PARAMETER          ; scfifo_d1a1   ; Untyped                                            ;
++-------------------------+---------------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; scfifo Parameter Settings by Entity Instance                                 ;
++----------------------------+-------------------------------------------------+
+; Name                       ; Value                                           ;
++----------------------------+-------------------------------------------------+
+; Number of entity instances ; 1                                               ;
+; Entity Instance            ; fifo_pixel:fifo_pixel_i|scfifo:scfifo_component ;
+;     -- FIFO Type           ; Single Clock                                    ;
+;     -- lpm_width           ; 64                                              ;
+;     -- LPM_NUMWORDS        ; 38400                                           ;
+;     -- LPM_SHOWAHEAD       ; ON                                              ;
+;     -- USE_EAB             ; ON                                              ;
++----------------------------+-------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo_pixel:fifo_pixel_i"                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; usedw ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[7].dilate_kernel_platedetection_i" ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                  ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; o_end_kernel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[6].dilate_kernel_platedetection_i" ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                  ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; o_end_kernel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[5].dilate_kernel_platedetection_i" ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                  ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; o_end_kernel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[4].dilate_kernel_platedetection_i" ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                  ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; o_end_kernel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[3].dilate_kernel_platedetection_i" ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                  ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; o_end_kernel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[2].dilate_kernel_platedetection_i" ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                  ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; o_end_kernel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[1].dilate_kernel_platedetection_i" ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                  ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; o_end_kernel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 268                         ;
+; cycloneiii_ff         ; 11232                       ;
+;     CLR               ; 155                         ;
+;     ENA               ; 404                         ;
+;     ENA CLR           ; 10337                       ;
+;     ENA SLD           ; 303                         ;
+;     SCLR              ; 3                           ;
+;     plain             ; 30                          ;
+; cycloneiii_lcell_comb ; 11345                       ;
+;     arith             ; 326                         ;
+;         2 data inputs ; 55                          ;
+;         3 data inputs ; 271                         ;
+;     normal            ; 11019                       ;
+;         0 data inputs ; 34                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 146                         ;
+;         3 data inputs ; 107                         ;
+;         4 data inputs ; 10727                       ;
+; cycloneiii_ram_block  ; 512                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 1.57                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:24     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+    Info: Processing started: Tue Oct 17 14:02:07 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2Gen1x1If64 -c DE2Gen1x1If64
+Warning (125092): Tcl Script File ../ip/ALTGXPCIeGen1x1.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE ../ip/ALTGXPCIeGen1x1.qip
+Warning (125092): Tcl Script File ../ip/PCIeGen1x1If64.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE ../ip/PCIeGen1x1If64.qip
+Warning (125092): Tcl Script File ../ip/ALTPLL50I50O125O250O.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE ../ip/ALTPLL50I50O125O250O.qip
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/reset_extender.v
+    Info (12023): Found entity 1: reset_extender File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/reset_extender.v Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/altera/de2i/riffa_wrapper_de2i.v
+    Info (12023): Found entity 1: riffa_wrapper_de2i File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/riffa_wrapper_de2i.v Line: 48
+Info (12021): Found 3 design units, including 3 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/txr_engine_ultrascale.v
+    Info (12023): Found entity 1: txr_engine_ultrascale File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/txr_engine_ultrascale.v Line: 51
+    Info (12023): Found entity 2: txr_formatter_ultrascale File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/txr_engine_ultrascale.v Line: 273
+    Info (12023): Found entity 3: txr_translation_layer File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/txr_engine_ultrascale.v Line: 404
+Info (12021): Found 2 design units, including 2 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/txr_engine_classic.v
+    Info (12023): Found entity 1: txr_engine_classic File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/txr_engine_classic.v Line: 51
+    Info (12023): Found entity 2: txr_formatter_classic File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/txr_engine_classic.v Line: 207
+Info (12021): Found 3 design units, including 3 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/txc_engine_ultrascale.v
+    Info (12023): Found entity 1: txc_engine_ultrascale File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/txc_engine_ultrascale.v Line: 51
+    Info (12023): Found entity 2: txc_formatter_ultrascale File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/txc_engine_ultrascale.v Line: 278
+    Info (12023): Found entity 3: txc_translation_layer File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/txc_engine_ultrascale.v Line: 402
+Info (12021): Found 2 design units, including 2 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/txc_engine_classic.v
+    Info (12023): Found entity 1: txc_engine_classic File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/txc_engine_classic.v Line: 52
+    Info (12023): Found entity 2: txc_formatter_classic File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/txc_engine_classic.v Line: 209
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_writer.v
+    Info (12023): Found entity 1: tx_port_writer File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_writer.v Line: 64
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_monitor_128.v
+    Info (12023): Found entity 1: tx_port_monitor_128 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_monitor_128.v Line: 53
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_monitor_64.v
+    Info (12023): Found entity 1: tx_port_monitor_64 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_monitor_64.v Line: 53
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_monitor_32.v
+    Info (12023): Found entity 1: tx_port_monitor_32 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_monitor_32.v Line: 53
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/tx_port_channel_gate_128.v(110) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_channel_gate_128.v Line: 110
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_channel_gate_128.v
+    Info (12023): Found entity 1: tx_port_channel_gate_128 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_channel_gate_128.v Line: 53
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/tx_port_channel_gate_64.v(110) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_channel_gate_64.v Line: 110
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_channel_gate_64.v
+    Info (12023): Found entity 1: tx_port_channel_gate_64 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_channel_gate_64.v Line: 53
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/tx_port_channel_gate_32.v(110) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_channel_gate_32.v Line: 110
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_channel_gate_32.v
+    Info (12023): Found entity 1: tx_port_channel_gate_32 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_channel_gate_32.v Line: 53
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/tx_port_buffer_128.v(113) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_buffer_128.v Line: 113
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_buffer_128.v
+    Info (12023): Found entity 1: tx_port_buffer_128 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_buffer_128.v Line: 48
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/tx_port_buffer_64.v(112) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_buffer_64.v Line: 112
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_buffer_64.v
+    Info (12023): Found entity 1: tx_port_buffer_64 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_buffer_64.v Line: 48
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/tx_port_buffer_32.v(85) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_buffer_32.v Line: 85
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_buffer_32.v
+    Info (12023): Found entity 1: tx_port_buffer_32 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_buffer_32.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_128.v
+    Info (12023): Found entity 1: tx_port_128 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_128.v Line: 46
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_64.v
+    Info (12023): Found entity 1: tx_port_64 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_64.v Line: 46
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_32.v
+    Info (12023): Found entity 1: tx_port_32 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_port_32.v Line: 46
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_multiplexer_128.v
+    Info (12023): Found entity 1: tx_multiplexer_128 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_multiplexer_128.v Line: 52
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_multiplexer_64.v
+    Info (12023): Found entity 1: tx_multiplexer_64 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_multiplexer_64.v Line: 59
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_multiplexer_32.v
+    Info (12023): Found entity 1: tx_multiplexer_32 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_multiplexer_32.v Line: 53
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_multiplexer.v
+    Info (12023): Found entity 1: tx_multiplexer File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_multiplexer.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_hdr_fifo.v
+    Info (12023): Found entity 1: tx_hdr_fifo File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_hdr_fifo.v Line: 56
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine_ultrascale.v
+    Info (12023): Found entity 1: tx_engine_ultrascale File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine_ultrascale.v Line: 50
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine_selector.v
+    Info (12023): Found entity 1: tx_engine_selector File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine_selector.v Line: 47
+Info (12021): Found 4 design units, including 4 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine_classic.v
+    Info (12023): Found entity 1: tx_engine_classic File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine_classic.v Line: 54
+    Info (12023): Found entity 2: tx_mux File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine_classic.v Line: 436
+    Info (12023): Found entity 3: tx_arbiter File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine_classic.v Line: 656
+    Info (12023): Found entity 4: tx_phi File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine_classic.v Line: 836
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine.v
+    Info (12023): Found entity 1: tx_engine File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine.v Line: 49
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_data_shift.v
+    Info (12023): Found entity 1: tx_data_shift File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_data_shift.v Line: 73
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_data_pipeline.v
+    Info (12023): Found entity 1: tx_data_pipeline File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_data_pipeline.v Line: 55
+Info (12021): Found 2 design units, including 2 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_data_fifo.v
+    Info (12023): Found entity 1: tx_data_fifo File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_data_fifo.v Line: 63
+    Info (12023): Found entity 2: counter_v2 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_data_fifo.v Line: 288
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_alignment_pipeline.v
+    Info (12023): Found entity 1: tx_alignment_pipeline File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_alignment_pipeline.v Line: 87
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/translation_xilinx.v
+    Info (12023): Found entity 1: translation_xilinx File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/translation_xilinx.v Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/translation_altera.v
+    Info (12023): Found entity 1: translation_altera File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/translation_altera.v Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/syncff.v
+    Info (12023): Found entity 1: syncff File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/syncff.v Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/sync_fifo.v
+    Info (12023): Found entity 1: sync_fifo File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/sync_fifo.v Line: 48
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/shiftreg.v
+    Info (12023): Found entity 1: shiftreg File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/shiftreg.v Line: 49
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/sg_list_requester.v
+    Info (12023): Found entity 1: sg_list_requester File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/sg_list_requester.v Line: 57
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/sg_list_reader_128.v
+    Info (12023): Found entity 1: sg_list_reader_128 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/sg_list_reader_128.v Line: 50
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/sg_list_reader_64.v
+    Info (12023): Found entity 1: sg_list_reader_64 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/sg_list_reader_64.v Line: 52
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/sg_list_reader_32.v
+    Info (12023): Found entity 1: sg_list_reader_32 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/sg_list_reader_32.v Line: 56
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/scsdpram.v
+    Info (12023): Found entity 1: scsdpram File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/scsdpram.v Line: 50
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxr_engine_ultrascale.v
+    Info (12023): Found entity 1: rxr_engine_ultrascale File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxr_engine_ultrascale.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxr_engine_classic.v
+    Info (12023): Found entity 1: rxr_engine_classic File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxr_engine_classic.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxr_engine_128.v
+    Info (12023): Found entity 1: rxr_engine_128 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxr_engine_128.v Line: 46
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxc_engine_ultrascale.v
+    Info (12023): Found entity 1: rxc_engine_ultrascale File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxc_engine_ultrascale.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxc_engine_classic.v
+    Info (12023): Found entity 1: rxc_engine_classic File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxc_engine_classic.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxc_engine_128.v
+    Info (12023): Found entity 1: rxc_engine_128 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxc_engine_128.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_requester_mux.v
+    Info (12023): Found entity 1: rx_port_requester_mux File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_requester_mux.v Line: 52
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_reader.v
+    Info (12023): Found entity 1: rx_port_reader File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_reader.v Line: 62
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_channel_gate.v
+    Info (12023): Found entity 1: rx_port_channel_gate File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_channel_gate.v Line: 46
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/rx_port_128.v(248) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_128.v Line: 248
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/rx_port_128.v(262) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_128.v Line: 262
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/rx_port_128.v(275) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_128.v Line: 275
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_128.v
+    Info (12023): Found entity 1: rx_port_128 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_128.v Line: 45
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/rx_port_64.v(248) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_64.v Line: 248
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/rx_port_64.v(262) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_64.v Line: 262
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/rx_port_64.v(275) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_64.v Line: 275
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_64.v
+    Info (12023): Found entity 1: rx_port_64 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_64.v Line: 45
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/rx_port_32.v(248) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_32.v Line: 248
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/rx_port_32.v(262) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_32.v Line: 262
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/rx_port_32.v(275) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_32.v Line: 275
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_32.v
+    Info (12023): Found entity 1: rx_port_32 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_port_32.v Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_engine_ultrascale.v
+    Info (12023): Found entity 1: rx_engine_ultrascale File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_engine_ultrascale.v Line: 48
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_engine_classic.v
+    Info (12023): Found entity 1: rx_engine_classic File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rx_engine_classic.v Line: 48
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/rotate.v
+    Info (12023): Found entity 1: rotate File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rotate.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/riffa.v
+    Info (12023): Found entity 1: riffa File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/riffa.v Line: 38
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/reset_controller.v
+    Info (12023): Found entity 1: reset_controller File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/reset_controller.v Line: 50
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/reorder_queue_output.v
+    Info (12023): Found entity 1: reorder_queue_output File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/reorder_queue_output.v Line: 58
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/reorder_queue_input.v(311) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/reorder_queue_input.v Line: 311
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/reorder_queue_input.v(328) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/reorder_queue_input.v Line: 328
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/reorder_queue_input.v
+    Info (12023): Found entity 1: reorder_queue_input File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/reorder_queue_input.v Line: 44
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/reorder_queue.v(179) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/reorder_queue.v Line: 179
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/reorder_queue.v(198) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/reorder_queue.v Line: 198
+Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at ../../../../riffa_hdl/reorder_queue.v(214) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/reorder_queue.v Line: 214
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/reorder_queue.v
+    Info (12023): Found entity 1: reorder_queue File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/reorder_queue.v Line: 62
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/registers.v
+    Info (12023): Found entity 1: registers File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/registers.v Line: 37
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/register.v
+    Info (12023): Found entity 1: register File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/register.v Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/recv_credit_flow_ctrl.v
+    Info (12023): Found entity 1: recv_credit_flow_ctrl File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/recv_credit_flow_ctrl.v Line: 48
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/ram_2clk_1w_1r.v
+    Info (12023): Found entity 1: ram_2clk_1w_1r File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/ram_2clk_1w_1r.v Line: 48
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/ram_1clk_1w_1r.v
+    Info (12023): Found entity 1: ram_1clk_1w_1r File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/ram_1clk_1w_1r.v Line: 48
+Info (12021): Found 3 design units, including 3 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/pipeline.v
+    Info (12023): Found entity 1: pipeline File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/pipeline.v Line: 45
+    Info (12023): Found entity 2: mem_pipeline File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/pipeline.v Line: 109
+    Info (12023): Found entity 3: reg_pipeline File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/pipeline.v Line: 214
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/one_hot_mux.v
+    Info (12023): Found entity 1: one_hot_mux File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/one_hot_mux.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/offset_to_mask.v
+    Info (12023): Found entity 1: offset_to_mask File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/offset_to_mask.v Line: 36
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/offset_flag_to_one_hot.v
+    Info (12023): Found entity 1: offset_flag_to_one_hot File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/offset_flag_to_one_hot.v Line: 45
+Warning (12090): Entity "mux" obtained from "../../../../riffa_hdl/mux.v" instead of from Quartus Prime megafunction library File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/mux.v Line: 45
+Info (12021): Found 3 design units, including 3 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/mux.v
+    Info (12023): Found entity 1: mux File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/mux.v Line: 45
+    Info (12023): Found entity 2: mux_select File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/mux.v Line: 90
+    Info (12023): Found entity 3: mux_shift File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/mux.v Line: 111
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/interrupt_controller.v
+    Info (12023): Found entity 1: interrupt_controller File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/interrupt_controller.v Line: 62
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/interrupt.v
+    Info (12023): Found entity 1: interrupt File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/interrupt.v Line: 49
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/fifo_packer_128.v
+    Info (12023): Found entity 1: fifo_packer_128 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/fifo_packer_128.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/fifo_packer_64.v
+    Info (12023): Found entity 1: fifo_packer_64 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/fifo_packer_64.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/fifo_packer_32.v
+    Info (12023): Found entity 1: fifo_packer_32 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/fifo_packer_32.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/fifo.v
+    Info (12023): Found entity 1: fifo File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/fifo.v Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/ff.v
+    Info (12023): Found entity 1: ff File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/ff.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/engine_layer.v
+    Info (12023): Found entity 1: engine_layer File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/engine_layer.v Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/demux.v
+    Info (12023): Found entity 1: demux File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/demux.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/cross_domain_signal.v
+    Info (12023): Found entity 1: cross_domain_signal File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/cross_domain_signal.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/counter.v
+    Info (12023): Found entity 1: counter File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/counter.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/chnl_tester.v
+    Info (12023): Found entity 1: chnl_tester File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/chnl_tester.v Line: 50
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/channel_128.v
+    Info (12023): Found entity 1: channel_128 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/channel_128.v Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/channel_64.v
+    Info (12023): Found entity 1: channel_64 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/channel_64.v Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/channel_32.v
+    Info (12023): Found entity 1: channel_32 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/channel_32.v Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/channel.v
+    Info (12023): Found entity 1: channel File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/channel.v Line: 36
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/async_fifo_fwft.v
+    Info (12023): Found entity 1: async_fifo_fwft File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/async_fifo_fwft.v Line: 48
+Info (12021): Found 4 design units, including 4 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/riffa_hdl/async_fifo.v
+    Info (12023): Found entity 1: async_fifo File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/async_fifo.v Line: 51
+    Info (12023): Found entity 2: async_cmp File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/async_fifo.v Line: 138
+    Info (12023): Found entity 3: rd_ptr_empty File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/async_fifo.v Line: 191
+    Info (12023): Found entity 4: wr_ptr_full File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/async_fifo.v Line: 251
+Info (12021): Found 1 design units, including 1 entities, in source file /projetos/tg/hw/riffa_2.2.2/source/fpga/altera/de2i/de2gen1x1if64/hdl/de2gen1x1if64.v
+    Info (12023): Found entity 1: DE2Gen1x1If64 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/hdl/DE2Gen1x1If64.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file dilate_platedetection.sv
+    Info (12023): Found entity 1: dilate_platedetection File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file dilate_kernel_platedetection.sv
+    Info (12023): Found entity 1: dilate_kernel_platedetection File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_kernel_platedetection.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit_platedetection.sv
+    Info (12023): Found entity 1: control_unit_platedetection File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file fifo_pixel.v
+    Info (12023): Found entity 1: fifo_pixel File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/fifo_pixel.v Line: 41
+Warning (10236): Verilog HDL Implicit Net warning at tx_engine_classic.v(179): created implicit net for "wDoneEngRst" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/tx_engine_classic.v Line: 179
+Warning (10236): Verilog HDL Implicit Net warning at rxr_engine_ultrascale.v(384): created implicit net for "rRst" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/rxr_engine_ultrascale.v Line: 384
+Warning (10236): Verilog HDL Implicit Net warning at riffa.v(425): created implicit net for "wPendingRst" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/riffa_hdl/riffa.v Line: 425
+Info (12127): Elaborating entity "control_unit_platedetection" for the top level hierarchy
+Info (12128): Elaborating entity "dilate_platedetection" for hierarchy "dilate_platedetection:dilate_platedetection_i" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 85
+Critical Warning (10237): Verilog HDL warning at dilate_platedetection.sv(134): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 134
+Critical Warning (10237): Verilog HDL warning at dilate_platedetection.sv(135): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 135
+Warning (10230): Verilog HDL assignment warning at dilate_platedetection.sv(142): truncated value with size 32 to match size of target (16) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 142
+Warning (10230): Verilog HDL assignment warning at dilate_platedetection.sv(170): truncated value with size 32 to match size of target (16) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 170
+Warning (10230): Verilog HDL assignment warning at dilate_platedetection.sv(171): truncated value with size 32 to match size of target (16) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 171
+Warning (10230): Verilog HDL assignment warning at dilate_platedetection.sv(213): truncated value with size 32 to match size of target (16) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 213
+Warning (10230): Verilog HDL assignment warning at dilate_platedetection.sv(234): truncated value with size 32 to match size of target (16) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 234
+Warning (10230): Verilog HDL assignment warning at dilate_platedetection.sv(235): truncated value with size 32 to match size of target (16) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 235
+Warning (10230): Verilog HDL assignment warning at dilate_platedetection.sv(279): truncated value with size 32 to match size of target (16) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 279
+Warning (10230): Verilog HDL assignment warning at dilate_platedetection.sv(300): truncated value with size 32 to match size of target (16) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 300
+Warning (10230): Verilog HDL assignment warning at dilate_platedetection.sv(323): truncated value with size 32 to match size of target (16) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 323
+Warning (10230): Verilog HDL assignment warning at dilate_platedetection.sv(342): truncated value with size 32 to match size of target (16) File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 342
+Info (12128): Elaborating entity "dilate_kernel_platedetection" for hierarchy "dilate_platedetection:dilate_platedetection_i|dilate_kernel_platedetection:PE[0].dilate_kernel_platedetection_i" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/dilate_platedetection.sv Line: 72
+Info (12128): Elaborating entity "fifo_pixel" for hierarchy "fifo_pixel:fifo_pixel_i" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 96
+Info (12128): Elaborating entity "scfifo" for hierarchy "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/fifo_pixel.v Line: 84
+Info (12130): Elaborated megafunction instantiation "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/fifo_pixel.v Line: 84
+Info (12133): Instantiated megafunction "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component" with the following parameter: File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/fifo_pixel.v Line: 84
+    Info (12134): Parameter "add_ram_output_register" = "ON"
+    Info (12134): Parameter "almost_empty_value" = "1"
+    Info (12134): Parameter "almost_full_value" = "38399"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV GX"
+    Info (12134): Parameter "lpm_numwords" = "38400"
+    Info (12134): Parameter "lpm_showahead" = "ON"
+    Info (12134): Parameter "lpm_type" = "scfifo"
+    Info (12134): Parameter "lpm_width" = "64"
+    Info (12134): Parameter "lpm_widthu" = "16"
+    Info (12134): Parameter "overflow_checking" = "ON"
+    Info (12134): Parameter "underflow_checking" = "ON"
+    Info (12134): Parameter "use_eab" = "ON"
+Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_d1a1.tdf
+    Info (12023): Found entity 1: scfifo_d1a1 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/scfifo_d1a1.tdf Line: 25
+Info (12128): Elaborating entity "scfifo_d1a1" for hierarchy "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated" File: c:/intelfpga/17.0/quartus/libraries/megafunctions/scfifo.tdf Line: 300
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_d331.tdf
+    Info (12023): Found entity 1: a_dpfifo_d331 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/a_dpfifo_d331.tdf Line: 33
+Info (12128): Elaborating entity "a_dpfifo_d331" for hierarchy "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/scfifo_d1a1.tdf Line: 38
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_rrh1.tdf
+    Info (12023): Found entity 1: altsyncram_rrh1 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/altsyncram_rrh1.tdf Line: 32
+Info (12128): Elaborating entity "altsyncram_rrh1" for hierarchy "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|altsyncram_rrh1:FIFOram" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/a_dpfifo_d331.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_cc7.tdf
+    Info (12023): Found entity 1: decode_cc7 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/decode_cc7.tdf Line: 23
+Info (12128): Elaborating entity "decode_cc7" for hierarchy "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|altsyncram_rrh1:FIFOram|decode_cc7:decode2" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/altsyncram_rrh1.tdf Line: 46
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_e88.tdf
+    Info (12023): Found entity 1: mux_e88 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/mux_e88.tdf Line: 23
+Info (12128): Elaborating entity "mux_e88" for hierarchy "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|altsyncram_rrh1:FIFOram|mux_e88:mux3" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/altsyncram_rrh1.tdf Line: 48
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_u19.tdf
+    Info (12023): Found entity 1: cmpr_u19 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/cmpr_u19.tdf Line: 23
+Info (12128): Elaborating entity "cmpr_u19" for hierarchy "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|cmpr_u19:almost_full_comparer" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/a_dpfifo_d331.tdf Line: 53
+Info (12128): Elaborating entity "cmpr_u19" for hierarchy "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|cmpr_u19:three_comparison" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/a_dpfifo_d331.tdf Line: 54
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_9fb.tdf
+    Info (12023): Found entity 1: cntr_9fb File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/cntr_9fb.tdf Line: 26
+Info (12128): Elaborating entity "cntr_9fb" for hierarchy "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|cntr_9fb:rd_ptr_msb" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/a_dpfifo_d331.tdf Line: 55
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_mf7.tdf
+    Info (12023): Found entity 1: cntr_mf7 File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/cntr_mf7.tdf Line: 26
+Info (12128): Elaborating entity "cntr_mf7" for hierarchy "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|cntr_mf7:usedw_counter" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/a_dpfifo_d331.tdf Line: 56
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_afb.tdf
+    Info (12023): Found entity 1: cntr_afb File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/cntr_afb.tdf Line: 26
+Info (12128): Elaborating entity "cntr_afb" for hierarchy "fifo_pixel:fifo_pixel_i|scfifo:scfifo_component|scfifo_d1a1:auto_generated|a_dpfifo_d331:dpfifo|cntr_afb:wr_ptr" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/db/a_dpfifo_d331.tdf Line: 57
+Info (13000): Registers with preset signals will power-up high File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 149
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "o_channel_tx_length[0]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[1]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[2]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[3]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[4]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[5]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[6]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[7]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[8]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[9]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[10]" is stuck at VCC File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[11]" is stuck at VCC File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[12]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[13]" is stuck at VCC File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[14]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[15]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[16]" is stuck at VCC File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[17]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[18]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[19]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[20]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[21]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[22]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[23]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[24]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[25]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[26]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[27]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[28]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[29]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[30]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_length[31]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 27
+    Warning (13410): Pin "o_channel_tx_offset[0]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[1]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[2]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[3]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[4]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[5]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[6]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[7]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[8]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[9]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[10]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[11]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[12]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[13]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[14]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[15]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[16]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[17]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[18]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[19]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[20]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[21]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[22]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[23]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[24]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[25]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[26]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[27]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[28]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[29]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+    Warning (13410): Pin "o_channel_tx_offset[30]" is stuck at GND File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 28
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 65 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "i_channel_rx_last" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 10
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[0]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[1]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[2]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[3]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[4]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[5]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[6]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[7]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[8]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[9]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[10]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[11]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[12]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[13]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[14]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[15]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[16]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[17]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[18]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[19]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[20]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[21]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[22]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[23]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[24]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[25]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[26]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[27]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[28]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[29]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[30]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_length[31]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 11
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[0]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[1]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[2]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[3]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[4]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[5]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[6]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[7]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[8]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[9]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[10]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[11]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[12]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[13]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[14]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[15]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[16]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[17]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[18]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[19]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[20]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[21]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[22]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[23]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[24]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[25]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[26]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[27]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[28]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[29]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_rx_offset[30]" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 12
+    Warning (15610): No output dependent on input pin "i_channel_tx_ack" File: D:/Projetos/TG/hw/riffa_2.2.2/source/fpga/altera/de2i/DE2Gen1x1If64/prj/control_unit_platedetection.sv Line: 21
+Info (21057): Implemented 12535 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 134 input pins
+    Info (21059): Implemented 134 output pins
+    Info (21061): Implemented 11755 logic cells
+    Info (21064): Implemented 512 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 170 warnings
+    Info: Peak virtual memory: 898 megabytes
+    Info: Processing ended: Tue Oct 17 14:03:21 2017
+    Info: Elapsed time: 00:01:14
+    Info: Total CPU time (on all processors): 00:01:25
+
+
